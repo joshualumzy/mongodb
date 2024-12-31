@@ -1,5 +1,5 @@
 pymongo
-pymongo(srv)
+pymongo[srv]
 dnspython
 pandas
 numpy
