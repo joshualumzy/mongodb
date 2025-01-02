@@ -6,7 +6,7 @@ from typing import List
 HYPEN_E_DOT = "-e ."
 
 
-def get_requiremet(file_path: str) -> List[str]:
+def get_requirement(file_path: str) -> List[str]:
     requirements = []
     with open(file_path) as f:
         requirements = f.readlines()
@@ -21,7 +21,7 @@ with open("README.md", "r", encoding="utf-8") as f:
     long_description = f.read()
 
 
-__version__ = "0.0.3"
+__version__ = "0.0.2"
 REPO_NAME = "mongodb"
 PKG_NAME = "databaseautomation"
 AUTHOR_USER_NAME = "joshualumzy"
@@ -34,11 +34,12 @@ setup(
     author_email=AUTHOR_EMAIL,
     description="A python package for connecting with database.",
     long_description=long_description,
-    long_description_content="text/markdown",
+    long_description_content_type="text/markdown",
     url=f"https://github.com/{AUTHOR_USER_NAME}/{REPO_NAME}",
     project_urls={
         "Bug Tracker": f"https://github.com/{AUTHOR_USER_NAME}/{REPO_NAME}/issues",
     },
     package_dir={"": "src"},
     packages=find_packages(where="src"),
+    install_requires=get_requirement("./requirements_dev.txt"),
 )
