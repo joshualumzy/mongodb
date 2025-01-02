@@ -12,5 +12,9 @@ ensure
 pytest==7.1.3
 tox==3.25.1
 black==22.8.0
-flake8==5.0.4 # check Python code quality
-mypy==0.971 # check type correctness
+
+# check Python code quality -
+flake8==5.0.4 
+
+# check type correctness -
+mypy==0.971 
