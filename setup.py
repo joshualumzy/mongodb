@@ -21,7 +21,7 @@ def get_requirements(file_path: str) -> List[str]:
     return requirements
 
 
-requirements = get_requirements("./requirements.txt")
+# requirements = get_requirements("./requirements.txt")
 
 
 with open("README.md", "r", encoding="utf-8") as f:
@@ -48,5 +48,13 @@ setup(
     },
     package_dir={"": "src"},
     packages=find_packages(where="src"),
-    install_requires=requirements,
+    install_requires=[
+        "pymongo",
+        "pymongo[srv]",
+        "dnspython",
+        "pandas",
+        "numpy",
+        "ensure",
+        "pytest",
+    ],
 )
