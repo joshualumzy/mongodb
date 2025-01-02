@@ -21,6 +21,9 @@ def get_requirements(file_path: str) -> List[str]:
     return requirements
 
 
+requirements = get_requirements("./requirements.txt")
+
+
 with open("README.md", "r", encoding="utf-8") as f:
     long_description = f.read()
 
@@ -45,5 +48,5 @@ setup(
     },
     package_dir={"": "src"},
     packages=find_packages(where="src"),
-    install_requires=get_requirements("./requirements.txt"),
+    install_requires=requirements,
 )
