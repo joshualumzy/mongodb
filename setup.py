@@ -21,12 +21,6 @@ def get_requirements(file_path: str) -> List[str]:
     return requirements
 
 
-from pathlib import Path
-
-# requirements = get_requirements(Path(__file__).parent / "requirements.txt")
-requirements = get_requirements("./requirements.txt")
-
-
 with open("README.md", "r", encoding="utf-8") as f:
     long_description = f.read()
 
@@ -53,5 +47,5 @@ setup(
     packages=find_packages(where="src"),
     include_package_data=True,
     data_files=[("", ["requirements.txt"])],
-    install_requires=requirements,
+    install_requires=get_requirements("./requirements.txt"),
 )
