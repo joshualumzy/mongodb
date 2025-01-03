@@ -50,7 +50,6 @@ setup(
     },
     package_dir={"": "src"},
     packages=find_packages(where="src"),
-    package_data={"": ["requirements.txt"]},
     include_package_data=True,
     install_requires=requirements,
 )
